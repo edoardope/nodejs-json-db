@@ -13,118 +13,113 @@ Una semplice applicazione CLI per la gestione di un database JSON. Questa applic
    ```bash
    git clone https://github.com/tuo-username/simple-db-cli.git
    cd simple-db-cli
-Installa le dipendenze:
 
-bash
-Copia codice
-npm install
-Uso
-Avvia l'applicazione CLI:
 
-bash
-Copia codice
-node index.js
-Comandi Disponibili
-createTable <tableName>
+2. Installa le dipendenze:
+
+    ```bash
+   npm install
+
+3. Avvia l'applicazione CLI:
+
+    ```bash
+
+    node index.js
+
+    
+## Comandi Disponibili
+    
+1. createTable <tableName>
 Crea una nuova tabella con il nome specificato.
 
 Esempio:
-
-bash
-Copia codice
 createTable users
-dropTable <tableName>
+
+
+2. dropTable <tableName>
 Elimina la tabella con il nome specificato.
 
 Esempio:
-
-bash
-Copia codice
 dropTable users
-insert <tableName> <key=value> [<key=value> ...]
+
+
+3. insert <tableName> <key=value> [<key=value> ...]
 Inserisce un nuovo record nella tabella specificata. I valori vengono assegnati ai campi del record e viene generato un ID unico per il record.
 
 Esempio:
-
-bash
-Copia codice
 insert users name=John age=30
-update <tableName> <id> <key=value> [<key=value> ...]
+
+
+4. update <tableName> <id> <key=value> [<key=value> ...]
 Aggiorna il record con l'ID specificato nella tabella indicata. I campi del record vengono aggiornati con i nuovi valori.
 
 Esempio:
-
-bash
-Copia codice
 update users 12345 name=John Doe age=31
-delete <tableName> <id>
+
+
+5. delete <tableName> <id>
 Elimina il record con l'ID specificato dalla tabella indicata.
 
 Esempio:
-
-bash
-Copia codice
 delete users 12345
-read <tableName>
+
+
+6. read <tableName>
 Legge e visualizza tutti i record nella tabella specificata.
 
 Esempio:
-
-bash
-Copia codice
 read users
-startTransaction
+
+
+7. startTransaction
 Inizia una nuova transazione. Tutte le modifiche fatte durante la transazione saranno registrate e potranno essere confermate o annullate.
 
 Esempio:
-
-bash
-Copia codice
 startTransaction
-commitTransaction
+
+
+8. commitTransaction
 Conferma tutte le modifiche fatte durante la transazione e le applica al database.
 
 Esempio:
-
-bash
-Copia codice
 commitTransaction
-rollbackTransaction
+
+
+9. rollbackTransaction
 Annulla tutte le modifiche fatte durante la transazione, senza applicarle al database.
 
 Esempio:
-
-bash
-Copia codice
 rollbackTransaction
-backupDB
+
+
+10. backupDB
 Esegue un backup del database nella directory backup.
 
 Esempio:
-
-bash
-Copia codice
 backupDB
-restoreDB
+
+
+11. restoreDB
 Ripristina il database dall'ultimo backup nella directory backup.
 
 Esempio:
-
-bash
-Copia codice
 restoreDB
-restorePart <tableName>
+
+
+12. restorePart <tableName>
 Ripristina una tabella specifica dall'ultimo backup nella directory backup.
 
 Esempio:
-
-bash
-Copia codice
 restorePart users
-Directory Struttura
+
+
+## Directory Struttura
+
 db/ - Directory principale per i file del database.
 backup/ - Directory per i backup del database.
-Note
+
+## Note
+
 Il sistema utilizza file JSON per memorizzare i dati delle tabelle.
 I lock per tabelle sono implementati in modo rudimentale; per un'applicazione più complessa, considera l'uso di tecniche di locking più avanzate.
 Contributi
