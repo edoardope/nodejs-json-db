@@ -3,6 +3,38 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
+console.log(`
+    **********************************************************
+    *                                                        *
+    *              Simple DB CLI Application                *
+    *                                                        *
+    *      CLI for managing JSON-based database tables.      *
+    *                                                        *
+    *   Available commands:                                 *
+    *    - createTable <tableName>                           *
+    *    - dropTable <tableName>                             *
+    *    - insert <tableName> <key=value> [<key=value> ...]  *
+    *    - update <tableName> <id> <key=value> [<key=value> ...]  *
+    *    - delete <tableName> <id>                           *
+    *    - read <tableName>                                 *
+    *    - startTransaction                                 *
+    *    - commitTransaction                                *
+    *    - rollbackTransaction                              *
+    *    - backupDB                                         *
+    *    - restoreDB                                        *
+    *    - restorePart <tableName>                          *
+    *                                                        *
+    *   For usage, type commands and press Enter.            *
+    *                                                        *
+    *   Example command to insert a record into 'utenti':    *
+    *   insert utenti name=John age=30                      *
+    *                                                        *
+    *   Ensure JSON table files are placed in the 'db'       *
+    *   directory and follow the required format.            *
+    *                                                        *
+    **********************************************************
+`);
+
 // Define the path to the database directory
 const dbDir = path.join(__dirname, 'db');
 

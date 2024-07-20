@@ -24,7 +24,13 @@ Una semplice applicazione CLI per la gestione di un database JSON. Questa applic
 
     ```bash
 
-    node index.js
+    node app.js
+
+4. Avvia l'applicazione CLI (optional):
+
+    ```bash
+
+    node api.js
 
     
 ## Comandi Disponibili
